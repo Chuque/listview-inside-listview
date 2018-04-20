@@ -40,7 +40,7 @@ public class SubItemAdapter extends ArrayAdapter<SubItem> {
     @Override
     public long getItemId(int position) {
         //TODO adicionar um id na classe SubItem e retorna-lo aqui. Por enquanto, pode retornar 0;
-        return 0;
+        return position;
     }
 
     @Override

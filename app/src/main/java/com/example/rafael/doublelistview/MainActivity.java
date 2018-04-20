@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         //populate arraylists
         ArrayList<SubItem> subItems = new ArrayList<>();
-        for(int i=0;i<2;i++){
+        for(int i=0;i<3;i++){
             SubItem subItem = new SubItem();
             subItem.setText("SubItem " + i);
             subItems.add(subItem);
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i=0;i<3;i++) {
             Item item = new Item();
             item.setText("Item " + i);
-            item.setSubItems(subItems);
+            item.setSubItems((ArrayList<SubItem>)subItems.clone());
             items.add(item);
         }
 

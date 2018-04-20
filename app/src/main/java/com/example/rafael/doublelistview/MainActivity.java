@@ -2,8 +2,11 @@ package com.example.rafael.doublelistview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.rafael.doublelistview.item.Item;
+import com.example.rafael.doublelistview.item.ItemAdapter;
+import com.example.rafael.doublelistview.subitem.SubItem;
 
 import java.util.ArrayList;
 
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ListView itemListView = findViewById(R.id.itemList);
-        ItemAdapter itemAdapter = new ItemAdapter(items, this);
+        ItemAdapter itemAdapter = new ItemAdapter(this, R.layout.item, items);
         itemListView.setAdapter(itemAdapter);
     }
 }

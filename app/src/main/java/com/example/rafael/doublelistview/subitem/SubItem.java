@@ -1,6 +1,6 @@
-package com.example.rafael.doublelistview;
+package com.example.rafael.doublelistview.subitem;
 
-class SubItem {
+public class SubItem {
     private String text;
 
     public String getText() {

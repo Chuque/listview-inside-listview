@@ -1,4 +1,6 @@
-package com.example.rafael.doublelistview;
+package com.example.rafael.doublelistview.item;
+
+import com.example.rafael.doublelistview.subitem.SubItem;
 
 import java.util.ArrayList;
 

@@ -3,7 +3,6 @@ package com.example.rafael.doublelistview.item;
 import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,8 @@ import com.example.rafael.doublelistview.subitem.SubItem;
 import com.example.rafael.doublelistview.subitem.SubItemAdapter;
 
 import java.util.ArrayList;
+
+import static com.example.rafael.doublelistview.utils.ListViewHeightUtil.setListViewHeightBasedOnItems;
 
 public class ItemAdapter extends ArrayAdapter<Item> {
 
@@ -68,8 +69,9 @@ public class ItemAdapter extends ArrayAdapter<Item> {
         Item item = items.get(position);
 
         ArrayAdapter<SubItem> subItemAdapter = new SubItemAdapter(context, R.layout.subitem, item.getSubItems());
-        holder.subItemList.setAdapter(subItemAdapter);
         holder.itemText.setText(item.getText());
+        holder.subItemList.setAdapter(subItemAdapter);
+        setListViewHeightBasedOnItems(holder.subItemList);
 
         return view;
     }

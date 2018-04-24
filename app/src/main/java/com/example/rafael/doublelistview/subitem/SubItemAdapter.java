@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rafael.doublelistview.R;
 
@@ -44,7 +44,7 @@ public class SubItemAdapter extends ArrayAdapter<SubItem> {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = convertView;
         SubItemHolder holder = null;
 
@@ -62,6 +62,13 @@ public class SubItemAdapter extends ArrayAdapter<SubItem> {
         }
 
         holder.subItemText.setText(subItems.get(position).getText());
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context,"Clicou sub item " + position, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return view;
     }
